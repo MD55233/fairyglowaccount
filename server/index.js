@@ -14,10 +14,16 @@ import salesRoutes from "./routes/sales.js";
 import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
+import Transaction from "./models/Transaction.js";
+import OverallStat from "./models/OverallStat.js";
+
 import {
   dataUser,
   dataProduct,
-  dataProductStat, } from "./data/index.js";
+  dataProductStat, 
+  dataTransaction,
+  dataOverallStat,
+} from "./data/index.js";
 
 
   /* CONFIGURATION */
@@ -43,7 +49,7 @@ mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         app.listen(PORT, () => console.log(`Server running on port: ${PORT} \ndb connected`));
 
-       
+      
         
     })
     .catch((error) => console.log(`${error} Did not connect`)); 

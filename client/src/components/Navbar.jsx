@@ -129,6 +129,22 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           </FlexBetween>
         </FlexBetween>
       </Toolbar>
+      
+      {/* Search bar for mobile */}
+      {isMobile && (
+        <FlexBetween
+          backgroundColor={theme.palette.background.alt}
+          borderRadius="9px"
+          gap="1rem"
+          p="0.1rem 1rem"
+          sx={{ marginTop: '0.5rem' }} // Add a little margin to separate from the toolbar
+        >
+          <InputBase placeholder="Search..." />
+          <IconButton>
+            <Search />
+          </IconButton>
+        </FlexBetween>
+      )}
     </AppBar>
   );
 };
